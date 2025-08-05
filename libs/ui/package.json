@@ -1,0 +1,29 @@
+{
+  "name": "@bnk4970/ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "esbuild src/components/*.ts src/components/*.tsx --outdir=dist --target=chrome95",
+    "dev": "esbuild src/components/*.ts src/components/*.tsx --outdir=dist --target=chrome95 --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.1",
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "esbuild": "^0.25.8",
+    "sass-embedded": "^1.89.2"
+  },
+  "peerDependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.13.5",
+    "sass": "^1.89.2",
+    "sass-loader": "16.0.5"
+  }
+}
