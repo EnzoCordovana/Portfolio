@@ -1,0 +1,15 @@
+# apps/frontend/Dockerfile
+FROM node:20
+
+WORKDIR /usr/apps/frontend/src
+
+COPY ../../apps/frontend/package.json ../../apps/frontend/package-lock.json ./
+
+COPY ../../apps/frontend .
+
+RUN npm i
+
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev"]
