@@ -9,3 +9,6 @@ front:
 
 back:
 	docker compose up backend
+
+sb:
+	docker compose up storybook
