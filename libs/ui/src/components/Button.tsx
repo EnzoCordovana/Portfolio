@@ -14,7 +14,7 @@ interface Props {
     | "shadow";
   onClick?: () => void;
 }
-const Button: React.FC<Props> = ({
+export const Button: React.FC<Props> = ({
   children,
   isPrimary = true,
   variant = "solid",
@@ -32,5 +32,3 @@ const Button: React.FC<Props> = ({
     </button>
   );
 };
-
-export default Button;
