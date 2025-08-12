@@ -2,7 +2,7 @@
   "name": "@bnk4970/ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "build": "esbuild src/components/*.ts src/components/*.tsx --outdir=dist --target=chrome95",
     "dev": "esbuild src/components/*.ts src/components/*.tsx --outdir=dist --target=chrome95 --watch",
