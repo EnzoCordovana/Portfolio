@@ -1,0 +1,15 @@
+FROM node:20
+
+WORKDIR /usr/tools/storybook/src
+
+COPY ../../tools/storybook/package.json ../../tools/storybook/package-lock.json ./
+
+COPY ../../tools/storybook .
+
+RUN npm i
+
+
+EXPOSE 6006
+
+# Empêcher l'ouverture automatique du navigateur
+CMD ["npm", "run", "storybook", "--", "--no-open"]

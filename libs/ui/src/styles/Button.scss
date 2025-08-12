@@ -1,0 +1,120 @@
+$primary: #4F94FF;
+$secondary: #FFAB40;
+$text-color: #e5e5e5;
+$border-radius: 8px;
+
+// button solid
+@mixin button-solid($color, $text-color: $text-color) {
+  background-color: $color;
+  border: none;
+  color: $text-color;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: rgba($color, 0.6);
+  }
+}
+// button faded
+@mixin button-faded($color) {
+  color: $color;
+}
+// button bordered
+@mixin button-bordered($color) {
+  background-color: transparent;
+  border-radius: $border-radius;
+  border: 2px solid $color;
+  color: $color;
+}
+// button light
+@mixin button-light($color) {
+  background-color: rgba($color, 0);
+  color: $color;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: rgba($color, 0.2);
+  }
+}
+// button flat
+@mixin button-flat($color) {
+    background-color: rgba($color, 0.2);
+    color: $color;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: rgba($color, 0.1);
+    }
+}
+// button ghost
+@mixin button-ghost($color) {
+    background-color: transparent;
+    color: $color;
+    border: 2px solid $color;
+    border-radius: $border-radius;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: $color;
+      color: $text-color;
+    }
+}
+// button shadow
+@mixin button-shadow($color) {
+    background-color: $color;
+    color: $text-color;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba($color, 0.6);
+    &:hover {
+      box-shadow: 0 0 10px rgba($color, 0.3);
+    }
+}
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  &.btn-primary {
+    &.btn-solid {
+      @include button-solid($primary);
+    }
+    &.btn-faded {
+      @include button-faded($primary);
+    }
+    &.btn-light {
+      @include button-light($primary);
+    }
+    &.btn-bordered {
+      @include button-bordered($primary);
+    }
+    &.btn-ghost {
+      @include button-ghost($primary);
+    }
+    &.btn-shadow {
+      @include button-shadow($primary);
+    }
+    &.btn-flat {
+      @include button-flat($primary);
+    }
+  }
+  &.btn-secondary {
+    &.btn-solid {
+        @include button-solid($secondary);
+      }
+  &.btn-faded {
+        @include button-faded($secondary);
+      }
+  &.btn-light {
+        @include button-light($secondary);
+      }
+  &.btn-bordered {
+        @include button-bordered($secondary);
+      }
+  &.btn-ghost {
+        @include button-ghost($secondary);
+      }
+  &.btn-shadow {
+        @include button-shadow($secondary);
+      }
+  &.btn-flat {
+        @include button-flat($secondary);
+      }
+  }
+}
