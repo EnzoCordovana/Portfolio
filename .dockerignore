@@ -1,0 +1,4 @@
+apps/frontend/node_modules
+apps/backend/target
+tools/storybook/node_modules
+node_modules
