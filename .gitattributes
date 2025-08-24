@@ -1,1 +1,4 @@
 pnpm-lock.yaml linguist-generated=true
+package-lock.json linguist-generated=true
+apps/**/package-lock.json linguist-generated=true
+tools/**/package-lock.json linguist-generated=true
