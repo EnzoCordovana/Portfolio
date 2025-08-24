@@ -1,14 +1,13 @@
 # apps/frontend/Dockerfile
 FROM node:20
 
-WORKDIR /usr/apps/frontend/src
+WORKDIR /usr/apps/frontend
 
-COPY ../../apps/frontend/package.json ../../apps/frontend/package-lock.json ./
-
-COPY ../../apps/frontend .
+COPY apps/frontend/package.json apps/frontend/package-lock.json ./
 
 RUN npm i
 
+COPY apps/frontend ./
 
 EXPOSE 5173
 

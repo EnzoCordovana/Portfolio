@@ -15,8 +15,9 @@ services:
     ports:
       - "5173:5173"
     volumes:
-      - "./apps/frontend:/usr/apps/frontend"
-      - "./libs/ui:/usr/libs/ui"
+      - ./apps/frontend:/usr/apps/frontend
+      - /usr/apps/frontend/node_modules
+      - ./libs/ui:/usr/libs/ui
     depends_on:
       - backend
 
@@ -27,5 +28,8 @@ services:
     ports:
       - "6006:6006"
     volumes:
-      - "./tools/storybook:/usr/tools/storybook"
-      - "./libs/ui:/usr/libs/ui"
+      - ./tools/storybook:/usr/tools/storybook
+      - /usr/tools/storybook/node_modules
+      - ./libs/ui:/usr/libs/ui
+    working_dir: /usr/tools/storybook
+    command: pnpm storybook --no-open
