@@ -1,0 +1,83 @@
+@import './_variables.scss';
+
+header {
+    background-color: $bg-clr-secondary;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid $border-clr;
+    &.close {
+        height: 100dvh;
+        display: grid;
+        place-items: center;
+    }
+    // Nom du dev
+    p {
+        color: $title-clr;
+        margin-left: 5%;
+        &.open {
+            display: block;
+        }
+        &.close {
+            display: none;
+        }
+    }
+    // Icon (close/open)
+    svg {
+        height: 42px;
+        aspect-ratio: 1/1;
+        margin-right: 5%;
+        cursor: pointer;
+        color: $text-clr;
+        &:hover {
+            color: $title-clr;
+        }
+        &, &:hover {
+            transition: color .2s ease-in-out;
+        }
+        &.open {
+            display: flex;
+        }
+        &.close {
+            display: none;
+        }
+        &.xIcon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 5% 5% 0 0;
+        }
+    }
+    // Barre de navigation
+    nav {
+        display: none;
+        &.close {
+            display: block;
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 2em;
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        color: $text-clr;
+                        &:hover {
+                            color: $title-clr;
+                        }
+                        &, &:hover {
+                            transition: all .2s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
