@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@bnk4970/storybook",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,6 +15,7 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@heroicons/react": "2.2.0",
     "@chromatic-com/storybook": "^4.1.0",
     "@storybook/addon-a11y": "^9.1.1",
     "@storybook/addon-docs": "^9.1.1",
