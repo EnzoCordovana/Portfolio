@@ -1,83 +1,184 @@
 @import './_variables.scss';
 
-header {
-    background-color: $bg-clr-secondary;
-    width: 100%;
-    height: 80px;
+/* ==========================================================================
+   HEADER - MOBILE FIRST APPROACH
+   ========================================================================== */
+
+.header {
+    // 📱 MOBILE STYLES (base styles)
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    background-color: $bg-clr-secondary;
+    border-bottom: 2px solid $border-clr;
+    z-index: 1000;
+
+    // Layout mobile par défaut
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid $border-clr;
-    &.close {
+    height: 80px;
+
+    // Menu mobile ouvert : plein écran
+    &.mobile-menu-open {
         height: 100dvh;
-        display: grid;
-        place-items: center;
-    }
-    // Nom du dev
-    p {
-        color: $title-clr;
-        margin-left: 5%;
-        &.open {
-            display: block;
-        }
-        &.close {
+        flex-direction: column;
+        justify-content: center;
+
+        .header__title {
             display: none;
         }
+
+        .header__mobile-toggle {
+            .header__hamburger-icon {
+                display: none;
+            }
+
+            .header__close-icon {
+                display: block;
+            }
+        }
+
+        .header__nav {
+            display: block;
+        }
     }
-    // Icon (close/open)
-    svg {
+}
+
+/* Titre */
+.header__title {
+    margin-left: 5%;
+
+    h1 {
+        color: $title-clr;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}
+
+/* Bouton hamburger mobile */
+.header__mobile-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5%;
+
+    .header__hamburger-icon,
+    .header__close-icon {
         height: 42px;
-        aspect-ratio: 1/1;
-        margin-right: 5%;
-        cursor: pointer;
+        width: 42px;
         color: $text-clr;
+        transition: color 0.2s ease-in-out;
+
         &:hover {
             color: $title-clr;
         }
-        &, &:hover {
-            transition: color .2s ease-in-out;
-        }
-        &.open {
-            display: flex;
-        }
-        &.close {
-            display: none;
-        }
-        &.xIcon {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 5% 5% 0 0;
+    }
+
+    .header__close-icon {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 5%;
+    }
+}
+
+/* Navigation mobile (cachée par défaut) */
+.header__nav {
+    display: none;
+
+    .header__nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .header__nav-item {
+        .header__nav-link {
+            text-decoration: none;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            color: $text-clr;
+            transition: color 0.2s ease-in-out;
+
+            &:hover {
+                color: $title-clr;
+            }
         }
     }
-    // Barre de navigation
-    nav {
-        display: none;
-        &.close {
-            display: block;
-            ul {
-                display: flex;
-                flex-direction: column;
-                gap: 2em;
-                li {
-                    list-style: none;
-                    a {
-                        text-decoration: none;
-                        text-transform: capitalize;
-                        color: $text-clr;
-                        &:hover {
-                            color: $title-clr;
-                        }
-                        &, &:hover {
-                            transition: all .2s ease-in-out;
-                        }
-                    }
+}
+
+/* ==========================================================================
+   TABLET & DESKTOP - 768px+
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+    .header {
+        // Menu toujours visible sur desktop
+        &.mobile-menu-open {
+            .header__title {
+                display: block;
+            }
+        }
+    }
+
+    .header__title {
+        display: block !important;
+
+        h1 {
+            font-size: 1.4rem;
+        }
+    }
+
+    // Cache le bouton hamburger sur desktop
+    .header__mobile-toggle {
+        display: none !important;
+    }
+
+    // Navigation desktop toujours visible
+    .header__nav {
+        margin-right: 5%;
+        display: block !important;
+        
+        .header__nav-list {
+            flex-direction: row;
+            gap: 2rem;
+            margin-top: 0;
+        }
+
+        .header__nav-item {
+            .header__nav-link {
+                font-size: 1rem;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    transition: all 0.2s ease-in-out;
                 }
             }
         }
+    }
+}
+
+/* ==========================================================================
+   LARGE DESKTOP - 1024px+ (optionnel)
+   ========================================================================== */
+@media screen and (min-width: 1024px) {
+    .header {
+        .header__nav-list {
+            gap: 3rem;
+        }
+    }
+
+    .header__title h1 {
+        font-size: 1.6rem;
     }
 }
