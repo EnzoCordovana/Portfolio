@@ -1,4 +1,4 @@
-package:
+packages:
   - 'libs/**'
   - 'apps/**'
   - 'tools/**'
