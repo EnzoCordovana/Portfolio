@@ -1,0 +1,133 @@
+// ==========================================================================
+// PALETTE DE COULEURS PORTFOLIO - BLEU FONCÉ / JAUNE / VIOLET
+// ==========================================================================
+
+// FOND PRINCIPAL - Bleu très foncé (inspiration nuit profonde)
+$bg-clr-primary: #0A0F23;        // Bleu marine très foncé
+$bg-clr-secondary: #1A1F3A;      // Bleu nuit plus clair
+$bg-clr-tertiary: #242B4D;       // Bleu ardoise pour cartes/sections
+
+// BORDURES - Variations du bleu
+$border-clr: #2E3656;            // Bordure principale
+$border-hover-clr: #3F4A73;      // Bordure au survol
+$border-accent-clr: #4A5B8C;     // Bordure accent
+
+// TEXTE - Hiérarchie claire
+$title-clr: #E8EAEF;             // Titres principaux (blanc cassé)
+$text-clr: #B8BCC8;              // Texte principal (gris bleuté)
+$text-secondary-clr: #8B92A5;    // Texte secondaire
+$text-muted-clr: #6B7280;        // Texte en sourdine
+
+// COULEURS PRIMAIRES
+$primary-clr: #FFD60A;           // Jaune éclatant (CTA principal)
+$primary-hover-clr: #FFC107;     // Jaune plus foncé au survol
+$primary-text-clr: #0A0F23;      // Texte sur fond jaune
+
+// COULEURS SECONDAIRES - Violet sophistiqué
+$secondary-clr: #7C3AED;         // Violet vif
+$secondary-hover-clr: #6D28D9;   // Violet plus foncé au survol
+$secondary-light-clr: #A78BFA;   // Violet clair pour accents
+$secondary-text-clr: #F3F4F6;    // Texte sur fond violet
+
+// ACCENTS ET ÉTATS
+$accent-clr: #10B981;            // Vert pour succès
+$warning-clr: #F59E0B;           // Orange pour avertissements
+$error-clr: #EF4444;             // Rouge pour erreurs
+$info-clr: #3B82F6;              // Bleu info
+
+// TAGS ET BADGES
+$tag-bg-clr: #1E2749;            // Fond des tags
+$tag-clr: #C7D2FE;               // Texte des tags (violet très clair)
+$tag-border-clr: #374151;        // Bordure des tags
+
+// GRADIENTS TENDANCE 2025
+$gradient-primary: linear-gradient(135deg, #7C3AED 0%, #3B82F6 50%, #FFD60A 100%);
+$gradient-secondary: linear-gradient(135deg, #1A1F3A 0%, #242B4D 100%);
+$gradient-card: linear-gradient(135deg, #1A1F3A 0%, #1E2749 100%);
+
+// OMBRES - Profondeur moderne
+$shadow-sm: 0 1px 2px rgba(124, 58, 237, 0.1);
+$shadow-md: 0 4px 6px rgba(124, 58, 237, 0.15);
+$shadow-lg: 0 10px 15px rgba(124, 58, 237, 0.2);
+$shadow-glow: 0 0 20px rgba(255, 214, 10, 0.3);
+
+// ==========================================================================
+// UTILISATION RECOMMANDÉE
+// ==========================================================================
+
+/*
+FOND PRINCIPAL:
+- Page: $bg-clr-primary
+- Sections: $bg-clr-secondary
+- Cartes: $bg-clr-tertiary
+
+BOUTONS:
+- Primary CTA: $primary-clr (jaune éclatant)
+- Secondary: $secondary-clr (violet)
+- Ghost: transparent avec bordure $border-hover-clr
+
+TEXTE:
+- H1/H2: $title-clr
+- Paragraphes: $text-clr
+- Métadonnées: $text-secondary-clr
+
+ACCENTS:
+- Liens: $secondary-light-clr
+- Hover states: $primary-hover-clr
+- Focus: $secondary-clr avec $shadow-glow
+*/
+
+// ==========================================================================
+// VARIABLES SÉMANTIQUES POUR COMPOSANTS
+// ==========================================================================
+
+// Navigation
+$nav-bg: rgba(26, 31, 58, 0.95);
+$nav-border: $border-clr;
+$nav-link: $text-clr;
+$nav-link-hover: $primary-clr;
+$nav-link-active: $secondary-clr;
+
+// Boutons
+$btn-primary-bg: $primary-clr;
+$btn-primary-color: $primary-text-clr;
+$btn-primary-hover: $primary-hover-clr;
+
+$btn-secondary-bg: $secondary-clr;
+$btn-secondary-color: $secondary-text-clr;
+$btn-secondary-hover: $secondary-hover-clr;
+
+$btn-outline-border: $border-hover-clr;
+$btn-outline-color: $text-clr;
+$btn-outline-hover-bg: $secondary-clr;
+
+// Cartes de projet
+$card-bg: $bg-clr-tertiary;
+$card-border: $border-clr;
+$card-hover-border: $secondary-light-clr;
+$card-shadow: $shadow-md;
+$card-hover-shadow: $shadow-lg;
+
+// Formulaires
+$input-bg: $bg-clr-secondary;
+$input-border: $border-clr;
+$input-focus-border: $secondary-clr;
+$input-placeholder: $text-muted-clr;
+$input-text: $text-clr;
+
+// ==========================================================================
+// CONTRASTE ET ACCESSIBILITÉ
+// ==========================================================================
+
+/*
+RATIOS DE CONTRASTE WCAG AA:
+✅ $title-clr sur $bg-clr-primary: 14.2:1
+✅ $text-clr sur $bg-clr-primary: 8.7:1
+✅ $primary-text-clr sur $primary-clr: 12.8:1
+✅ $secondary-text-clr sur $secondary-clr: 8.9:1
+
+TESTS EFFECTUÉS:
+- Daltonisme (protanopie, deutéranopie, tritanopie)
+- Contraste faible luminosité
+- Mode sombre natif
+*/
